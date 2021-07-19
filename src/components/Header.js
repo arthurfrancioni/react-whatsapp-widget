@@ -1,21 +1,36 @@
 import React from 'react'
-import { BiSupport } from 'react-icons/bi'
-import { AiOutlineClose } from 'react-icons/ai'
 import styles from './Header.module.css'
 
-export default function Header({ companyName, textReplyTime, handleOpen }) {
+export default function Header({ name, status, agents, avatar, description }) {
   return (
-    <div className={styles.root}>
-      <span className={styles.close_btn} onClick={handleOpen}>
-        <AiOutlineClose />
-      </span>
-      <div className={styles.logo}>
-        <BiSupport />
-      </div>
-      <div className={styles.texts}>
-        <span className={styles.texts_h1}>{companyName}</span>
-        <span className={styles.texts_span}>{textReplyTime}</span>
-      </div>
+    <div className={`${styles.header} ${agents ? styles.header_group : ''}`}>
+      {!agents && (
+        <React.Fragment>
+          <div className={`${styles.user_avatar}`}>
+            <div className={`${styles.user_avatar_container}`}>
+              <div
+                style={avatar && { backgroundImage: 'url(' + avatar + ')' }}
+                className={`${styles.user_avatar_img}`}
+              />
+            </div>
+          </div>
+          <div className={`${styles.user_info}`}>
+            <div className={`${styles.user_name}`}>{name}</div>
+            <div className={`${styles.user_desc}`}>{status}</div>
+          </div>
+        </React.Fragment>
+      )}
+
+      {agents && (
+        <React.Fragment>
+          {agents.map((agent, index) => (
+            <div key={index} className={`${styles.user_group_avatar}`}>
+              <img src={agent.avatar} />
+            </div>
+          ))}
+          <p>{description}</p>
+        </React.Fragment>
+      )}
     </div>
   )
 }

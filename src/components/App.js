@@ -1,19 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from './App.module.css'
-import WidgetContext from '../context/widgetContext'
 
-import Header from './Header'
-import ChatSection from './ChatSection'
-import SendButton from './SendButton'
+import WhatsAppButton from './WhatsAppButton'
+import WhatsAppChat from './WhatsAppChat'
 
 export default function App(props) {
-  const { isOpen, handleOpen } = useContext(WidgetContext)
-
   return (
-    <div className={`${styles.root} ${isOpen ? styles.open : styles.close}`}>
-      <Header handleOpen={handleOpen} {...props} />
-      <ChatSection {...props} />
-      <SendButton {...props} />
+    <div className={`${styles.component}`}>
+      <div className={`${styles.float_main}`}>
+        <WhatsAppChat {...props} />
+        <WhatsAppButton {...props} />
+      </div>
     </div>
   )
 }

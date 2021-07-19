@@ -1,50 +1,118 @@
-.root {
-  background-color: rgb(9, 94, 84);
+.header {
+  color: rgb(17, 17, 17);
   display: flex;
-}
-
-.close_btn {
-  color: #f0ffffa1;
-  cursor: pointer;
-  font-size: 1.5em;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-.logo {
+  -webkit-box-align: center;
   align-items: center;
-  align-self: center;
-  background: #fff;
-  border-radius: 50%;
-  color: cadetblue;
-  display: flex;
-  font-size: 2em;
-  height: 45px;
-  margin: 5px;
-  justify-content: center;
-  padding: 10px;
-  width: 45px;
+  background: rgb(9, 94, 84);
+  padding: 24px 20px;
 }
 
-.texts {
-  color: rgb(255, 255, 255);
-  margin-left: 16px;
-  margin-right: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.texts_h1 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
+.header_group {
+  text-align: center;
   display: block;
 }
 
-.texts_span {
+.header .user_avatar {
+  width: 52px;
+  height: 52px;
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.header .user_avatar::before {
+  content: "";
+  bottom: 0px;
+  right: 0px;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  background-color: rgb(74, 213, 4);
+  display: block;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(9, 94, 84);
+  border-image: initial;
+}
+
+.header .user_avatar .user_avatar_container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.header .user_avatar .user_avatar_container::after {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-image: initial;
+  overflow: hidden;
+}
+
+.header .user_avatar .user_avatar_container .user_avatar_img {
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  background-size: cover;
+  background-image: url('data:image/png;base64,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');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.header .user_info {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.header .user_info .user_name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.header .user_info .user_desc {
   font-size: 13px;
   line-height: 18px;
   margin-top: 4px;
+  color: rgb(255, 255, 255);
+}
+
+.header .user_group_avatar {
+  display: inline-block;
+  position: relative;
+  margin-left: -50px;
+  left: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 60px;
+  vertical-align: middle;
+  overflow: hidden;
+  background: #000;
+  border-color: rgb(9, 94, 84);
+  height: 60px;
+  width: 60px;
+}
+
+.header_group > p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #fff;
 }

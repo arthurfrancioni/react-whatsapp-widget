@@ -1,0 +1,115 @@
+.msg_loader {
+  background-color: rgb(255, 255, 255);
+  width: 52.5px;
+  height: 32px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-left: 10px;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 0.5px;
+  border-radius: 16px;
+  transition: all 0.1s ease 0s;
+}
+
+.msg_loader.show {
+  opacity: 1;
+}
+
+.msg_loader.hide {
+  opacity: 0;
+}
+
+.msg_loader .msg_loader_container {
+  position: relative;
+  display: flex;
+}
+
+.msg_loader .msg_loader_container .msg_dot_animate_1 {
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  position: relative;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 0px;
+  background-color: rgb(158, 157, 162);
+  animation-name: dot1;
+  margin: 0px 2px;
+  border-radius: 50%;
+}
+
+.msg_loader .msg_loader_container .msg_dot_animate_2 {
+  height: 5px;
+  width: 5px;
+  background-color: rgb(182, 181, 186);
+  display: inline-block;
+  position: relative;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 0px;
+  animation-name: dot2;
+  margin: 0px 2px;
+  border-radius: 50%;
+}
+
+.msg_loader .msg_loader_container .msg_dot_animate_3 {
+  height: 5px;
+  width: 5px;
+  background-color: rgb(182, 181, 186);
+  display: inline-block;
+  position: relative;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 0px;
+  animation-name: dot3;
+  margin: 0px 2px;
+  border-radius: 50%;
+}
+
+@keyframes dot1 {
+  0% {
+    background-color: rgb(182, 181, 186);
+  }
+
+  15% {
+    background-color: rgb(17, 17, 17);
+  }
+
+  25% {
+    background-color: rgb(182, 181, 186);
+  }
+}
+
+@keyframes dot2 {
+  15% {
+    background-color: rgb(182, 181, 186);
+  }
+
+  25% {
+    background-color: rgb(17, 17, 17);
+  }
+
+  35% {
+    background-color: rgb(182, 181, 186);
+  }
+}
+
+@keyframes dot3 {
+  25% {
+    background-color: rgb(182, 181, 186);
+  }
+
+  35% {
+    background-color: rgb(17, 17, 17);
+  }
+
+  45% {
+    background-color: rgb(182, 181, 186);
+  }
+}

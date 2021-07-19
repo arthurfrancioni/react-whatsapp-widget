@@ -1,0 +1,37 @@
+.chat_widget {
+  width: 360px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 12px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  transform: translate3d(0px, 0px, 0px);
+  visibility: visible;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  left: auto;
+  margin-right: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: opacity 0.3s ease 0s, margin 0.3s ease 0s, visibility 0.3s ease 0s;
+}
+
+@media only screen and (max-width: 768px) {
+  .chat_widget {
+    width: 300px;
+  }
+}
+
+.chat_widget.close {
+  touch-action: none;
+  pointer-events: none;
+  margin-bottom: 80px;
+  opacity: 0;
+}
+
+.chat_widget.open {
+  touch-action: auto;
+  pointer-events: all;
+  margin-bottom: 96px;
+  opacity: 1;
+}

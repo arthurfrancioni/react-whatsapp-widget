@@ -1,35 +1,51 @@
-.root {
-  align-items: center;
-  align-self: flex-end;
-  background-color: rgb(255, 255, 255);
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 12px;
-  color: rgb(79, 206, 93);
-  cursor: pointer;
-  display: flex;
-  font-size: 2em;
+.button {
   height: 64px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 12px;
+  display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
   margin-bottom: 20px;
   margin-right: 20px;
   margin-left: 20px;
-  outline: transparent;
-  user-select: none;
   width: 64px;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-  position: absolute;
-  bottom: 15px;
-  right: 30px;
+  border-radius: 50%;
+  outline: transparent;
 }
 
-/*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
+.button.button_white {
+  background-color: rgb(255, 255, 255);
+}
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .root {
-    margin-right: 0;
-  }
+.button.button_green {
+  background-color: rgb(79, 206, 93);
+}
+
+.button.button_white svg {
+  fill: rgb(79, 206, 93);
+}
+
+.button.button_green svg {
+  fill: rgb(255, 255, 255);
+}
+
+.button::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 0, 0);
+  display: block;
+  position: absolute;
+  z-index: 1;
+  right: 4px;
+  top: 4px;
+  border-radius: 50%;
+}
+
+.icon {
+  display: flex;
 }
