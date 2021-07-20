@@ -2,13 +2,15 @@ import React, { useContext } from 'react'
 import styles from './WhatsAppButton.module.css'
 import WidgetContext from '../context/widgetContext'
 
-export default function WhatsAppButton() {
+export default function WhatsAppButton({ buttonStyle }) {
   const { handleOpen } = useContext(WidgetContext)
 
   return (
     <div
       onClick={handleOpen}
-      className={`${styles.button} ${styles.button_white}`}
+      className={`${styles.button} ${
+        buttonStyle === 'white' ? styles.button_white : styles.button_green
+      }`}
     >
       <div className={`${styles.icon}`}>
         <svg viewBox='0 0 90 90' width='32' height='32'>
