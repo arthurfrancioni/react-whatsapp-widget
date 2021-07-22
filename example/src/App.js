@@ -51,7 +51,7 @@ const App = () => {
       },
     ]
   };
-  return <WhatsAppWidget chat={CHAT1} />
+  return <WhatsAppWidget chat={CHAT} />
 }
 
 export default App
