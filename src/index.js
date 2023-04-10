@@ -3,7 +3,7 @@ import App from './components/App'
 import { WidgetContextProvider } from './context/widgetContext'
 
 export default function WhatsAppWidget({ chat }) {
-  const [setDefaultConfig, defaultConfig] = useState(null)
+  const [defaultConfig, setDefaultConfig] = useState(null)
 
   useEffect(() => {
     setDefaultConfig({
